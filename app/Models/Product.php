@@ -17,7 +17,7 @@ class Product extends Model
         "sku",
         "name",
         "category",
-        "price"
+        "price",
     ];
 
     /**
@@ -40,7 +40,7 @@ class Product extends Model
     protected function finalPrice(): Attribute
     {
         return Attribute::make(
-            get: fn () => $this->original_price - ($this->original_price * ($this->getAllDiscount()/100)),
+            get: fn () => $this->original_price - ($this->original_price * ($this->getAllDiscount() / 100)),
         );
     }
 
@@ -52,7 +52,7 @@ class Product extends Model
     protected function discountPercentage(): Attribute
     {
         return Attribute::make(
-            get: fn () => $this->getDiscountPercentage() ,
+            get: fn () => $this->getDiscountPercentage(),
         );
     }
 }

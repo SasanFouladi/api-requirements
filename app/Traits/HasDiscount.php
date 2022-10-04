@@ -45,7 +45,7 @@ trait HasDiscount
     public function getCategoryDiscount(): int
     {
         $categories = ['insurance'];
-        if (in_array($this->category, $categories)){
+        if (in_array($this->category, $categories)) {
             return 30;
         }
         return 0;
@@ -59,10 +59,9 @@ trait HasDiscount
     public function getSkuDiscount(): int
     {
         $discountSku = ['000003'];
-        if (in_array($this->sku, $discountSku)){
+        if (in_array($this->sku, $discountSku)) {
             return 15;
         }
         return 0;
     }
-
 }
